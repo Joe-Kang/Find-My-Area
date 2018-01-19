@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5121ADB201182F1009FAFF9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A5121ADA201182F1009FAFF9 /* Podfile */; };
 		B4482B85201167FD00E93394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4482B84201167FD00E93394 /* AppDelegate.swift */; };
 		B4482B87201167FD00E93394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4482B86201167FD00E93394 /* ViewController.swift */; };
 		B4482B8A201167FD00E93394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4482B88201167FD00E93394 /* Main.storyboard */; };
 		B4482B8D201167FD00E93394 /* Find_My_Area.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4482B8B201167FD00E93394 /* Find_My_Area.xcdatamodeld */; };
 		B4482B8F201167FD00E93394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4482B8E201167FD00E93394 /* Assets.xcassets */; };
 		B4482B92201167FD00E93394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4482B90201167FD00E93394 /* LaunchScreen.storyboard */; };
-		BA26A5E0459AE3EBDF062CC8 /* libPods-Find My Area.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5630C4D46A2324D429596E8F /* libPods-Find My Area.a */; };
+		B4482BA820118CAF00E93394 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B4482BA720118CAF00E93394 /* Podfile */; };
+		B4482BAA20119F7A00E93394 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4482BA920119F7A00E93394 /* MapViewController.swift */; };
+		C996E634805166EBC32ABCA6 /* libPods-Find My Area.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,10 @@
 		B4482B8E201167FD00E93394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4482B91201167FD00E93394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4482B93201167FD00E93394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD2514826F4E2B4E70DB0E2C /* Pods-Find My Area.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find My Area.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area.debug.xcconfig"; sourceTree = "<group>"; };
+		B4482BA720118CAF00E93394 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		B4482BA920119F7A00E93394 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find My Area.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area.debug.xcconfig"; sourceTree = "<group>"; };
+		F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Find My Area.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,29 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA26A5E0459AE3EBDF062CC8 /* libPods-Find My Area.a in Frameworks */,
+				C996E634805166EBC32ABCA6 /* libPods-Find My Area.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62980349E0A0754EB9432D6E /* Frameworks */ = {
+		4C8CC535A693DB8BA9D565E7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5630C4D46A2324D429596E8F /* libPods-Find My Area.a */,
+				E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */,
+				00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B4482B78201167FD00E93394 = {
 			isa = PBXGroup;
 			children = (
-				A5121ADA201182F1009FAFF9 /* Podfile */,
+				B4482BA720118CAF00E93394 /* Podfile */,
 				B4482B83201167FD00E93394 /* Find My Area */,
 				B4482B82201167FD00E93394 /* Products */,
-				BD447A2FBAB8649DF0587620 /* Pods */,
-				62980349E0A0754EB9432D6E /* Frameworks */,
+				4C8CC535A693DB8BA9D565E7 /* Pods */,
+				E8D296224AFFB8D0694382A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +82,7 @@
 				B4482B84201167FD00E93394 /* AppDelegate.swift */,
 				B4482B86201167FD00E93394 /* ViewController.swift */,
 				B4482B88201167FD00E93394 /* Main.storyboard */,
+				B4482BA920119F7A00E93394 /* MapViewController.swift */,
 				B4482B8E201167FD00E93394 /* Assets.xcassets */,
 				B4482B90201167FD00E93394 /* LaunchScreen.storyboard */,
 				B4482B93201167FD00E93394 /* Info.plist */,
@@ -85,13 +91,12 @@
 			path = "Find My Area";
 			sourceTree = "<group>";
 		};
-		BD447A2FBAB8649DF0587620 /* Pods */ = {
+		E8D296224AFFB8D0694382A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD2514826F4E2B4E70DB0E2C /* Pods-Find My Area.debug.xcconfig */,
-				11C4DB9F9925071CFC5B6A00 /* Pods-Find My Area.release.xcconfig */,
+				F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,12 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4482B96201167FD00E93394 /* Build configuration list for PBXNativeTarget "Find My Area" */;
 			buildPhases = (
-				854EB9F8831D05E1624AEA4E /* [CP] Check Pods Manifest.lock */,
+				11A3D15937C20D8C9E7E5682 /* [CP] Check Pods Manifest.lock */,
 				B4482B7D201167FD00E93394 /* Sources */,
 				B4482B7E201167FD00E93394 /* Frameworks */,
 				B4482B7F201167FD00E93394 /* Resources */,
-				2AD601DBEFD6CA61B9C3EFCB /* [CP] Embed Pods Frameworks */,
-				78C21ECDDA6A8041F2A18A1C /* [CP] Copy Pods Resources */,
+				734B22BB2EFA5149191BB2AB /* [CP] Embed Pods Frameworks */,
+				60E29FE4774123DCB389F60B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,9 +161,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5121ADB201182F1009FAFF9 /* Podfile in Resources */,
 				B4482B92201167FD00E93394 /* LaunchScreen.storyboard in Resources */,
 				B4482B8F201167FD00E93394 /* Assets.xcassets in Resources */,
+				B4482BA820118CAF00E93394 /* Podfile in Resources */,
 				B4482B8A201167FD00E93394 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,22 +171,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AD601DBEFD6CA61B9C3EFCB /* [CP] Embed Pods Frameworks */ = {
+		11A3D15937C20D8C9E7E5682 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find My Area-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		78C21ECDDA6A8041F2A18A1C /* [CP] Copy Pods Resources */ = {
+		60E29FE4774123DCB389F60B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,22 +209,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		854EB9F8831D05E1624AEA4E /* [CP] Check Pods Manifest.lock */ = {
+		734B22BB2EFA5149191BB2AB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Find My Area-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -229,6 +234,7 @@
 				B4482B87201167FD00E93394 /* ViewController.swift in Sources */,
 				B4482B85201167FD00E93394 /* AppDelegate.swift in Sources */,
 				B4482B8D201167FD00E93394 /* Find_My_Area.xcdatamodeld in Sources */,
+				B4482BAA20119F7A00E93394 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,14 +369,14 @@
 		};
 		B4482B97201167FD00E93394 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD2514826F4E2B4E70DB0E2C /* Pods-Find My Area.debug.xcconfig */;
+			baseConfigurationReference = E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E2GWRD8VU6;
+				DEVELOPMENT_TEAM = WZ37CA2TWJ;
 				INFOPLIST_FILE = "Find My Area/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Joe.Find-My-Area";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Joe.Find-My-Area";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,14 +385,14 @@
 		};
 		B4482B98201167FD00E93394 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11C4DB9F9925071CFC5B6A00 /* Pods-Find My Area.release.xcconfig */;
+			baseConfigurationReference = 00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E2GWRD8VU6;
+				DEVELOPMENT_TEAM = WZ37CA2TWJ;
 				INFOPLIST_FILE = "Find My Area/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Joe.Find-My-Area";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Joe.Find-My-Area";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -14,11 +14,13 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        Thread.sleep(forTimeInterval: 2.0)
+        
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyChfC5NBsW8In9qGYHHMxwUdyYEj3cSdxQ")
         return true
