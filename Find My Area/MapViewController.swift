@@ -20,6 +20,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         super.viewDidLoad()
         enableBasicLocationServices()
     }
+
     func enableBasicLocationServices() {
         locationManager.delegate = self
         
@@ -76,12 +77,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.delegate = self
         self.view = mapView
         // Creates a marker in the center of the map.
-//
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!)
-//        marker.title = "Current Location"
-//        marker.snippet = "Put pin here"
-//        marker.map = mapView
+
         for location in clickedLocations {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
@@ -89,17 +85,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         }
     }
     
+    
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!)
         pointsLocations.add((currentLocation?.coordinate)!)
         clickedLocations.append(currentLocation)
         print(GMSGeometryArea(pointsLocations))
-        
-        for location in clickedLocations {
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
-            marker.map = mapView
-        }
+        marker.map = mapView
     }
 }
