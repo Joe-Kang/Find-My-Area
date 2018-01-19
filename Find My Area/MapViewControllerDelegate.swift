@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MapViewControllerDelegate {
-    func returnArea(by Controller: UIViewController,_ area:Double)
-    func returnDistance(by Controller: UIViewController, _ distance:Double)
+protocol MapViewControllerDelegate: class {
+    func returnArea(by Controller: MapViewController,_ area:Double)
+    func returnDistance(by Controller: MapViewController, _ distance:Double)
 }

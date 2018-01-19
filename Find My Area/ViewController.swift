@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController, MapViewControllerDelegate {
+    
     @IBAction func addMapCoordinates(_ sender: UIBarButtonItem) {
     }
     
@@ -19,20 +20,22 @@ class ViewController: UIViewController, MapViewControllerDelegate {
     }
     
     override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        let mapViewController = navigationController.topViewController as! MapViewController
+        mapViewController.delegate = self
+    }
 
-    func returnArea(by Controller: UIViewController, _ area: Double) {
+    func returnArea(by Controller: MapViewController, _ area: Double) {
         dismiss(animated: true, completion: nil)
         print(area)
 
     }
-    
-    func returnDistance(by Controller: UIViewController, _ distance: Double) {
+
+    func returnDistance(by Controller: MapViewController, _ distance: Double) {
         dismiss(animated: true, completion: nil)
         print(distance)
-
     }
-    
-    
-
 }
 

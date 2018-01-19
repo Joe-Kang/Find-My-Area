@@ -10,16 +10,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     @IBOutlet weak var nameTextField: UITextField!
     
-    var delegate:MapViewControllerDelegate?
+    weak var delegate: MapViewControllerDelegate?
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        if pointsLocations.count() == 2{
-            let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
-            delegate?.returnDistance(by: self, distance )
-        }
-        else if pointsLocations.count() > 2{
-            delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
-        }
+//        if pointsLocations.count() == 2{
+//            let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
+//            delegate?.returnDistance(by: self, distance)
+//
+//        }
+//        else if pointsLocations.count() > 2{
+//            delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
+//        }
+        print(GMSGeometryArea(pointsLocations))
+        delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
@@ -81,7 +84,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func enableMyWhenInUseFeatures(){
         print("enableMyWhenInUseFeatures")
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = kCLDistanceFilterNone  // In meters.
+        locationManager.distanceFilter = 0.5  // In meters.
         locationManager.startUpdatingLocation()
     }
 
@@ -125,9 +128,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         marker.position = CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!)
         pointsLocations.add((currentLocation?.coordinate)!)
         clickedLocations.append(currentLocation)
-        print("Area: ", GMSGeometryArea(pointsLocations))
         marker.map = mapView
-        mapView.animate(toLocation: marker.position)
-
     }
 }

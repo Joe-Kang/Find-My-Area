@@ -155,7 +155,7 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="OZa-Ny-Qne">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="hUJ-YY-zfs" id="Tqd-wa-INx"/>
+                                <action selector="saveButtonPressed:" destination="hUJ-YY-zfs" id="2Rb-jj-zjd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
