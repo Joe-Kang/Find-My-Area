@@ -17,7 +17,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         if pointsLocations.count() == 2{
             let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
             delegate?.returnDistance(by: self, distance, nameTextField.text!)
-
         }
         else if pointsLocations.count() > 2{
             delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations), nameTextField.text!)
