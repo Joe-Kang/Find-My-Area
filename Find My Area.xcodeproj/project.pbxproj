@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A534CE7520126EC400B9FA03 /* MapViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A534CE7420126EC400B9FA03 /* MapViewControllerDelegate.swift */; };
 		B4482B85201167FD00E93394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4482B84201167FD00E93394 /* AppDelegate.swift */; };
 		B4482B87201167FD00E93394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4482B86201167FD00E93394 /* ViewController.swift */; };
 		B4482B8A201167FD00E93394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4482B88201167FD00E93394 /* Main.storyboard */; };
@@ -19,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find My Area.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area.release.xcconfig"; sourceTree = "<group>"; };
+		A534CE7420126EC400B9FA03 /* MapViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B4482B81201167FD00E93394 /* Find My Area.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find My Area.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4482B84201167FD00E93394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4482B86201167FD00E93394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */,
-				00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -81,6 +81,7 @@
 				B4482B86201167FD00E93394 /* ViewController.swift */,
 				B4482B88201167FD00E93394 /* Main.storyboard */,
 				B4482BA920119F7A00E93394 /* MapViewController.swift */,
+				A534CE7420126EC400B9FA03 /* MapViewControllerDelegate.swift */,
 				B4482B8E201167FD00E93394 /* Assets.xcassets */,
 				B4482B90201167FD00E93394 /* LaunchScreen.storyboard */,
 				B4482B93201167FD00E93394 /* Info.plist */,
@@ -229,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A534CE7520126EC400B9FA03 /* MapViewControllerDelegate.swift in Sources */,
 				B4482B87201167FD00E93394 /* ViewController.swift in Sources */,
 				B4482B85201167FD00E93394 /* AppDelegate.swift in Sources */,
 				B4482B8D201167FD00E93394 /* Find_My_Area.xcdatamodeld in Sources */,
@@ -371,10 +373,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WZ37CA2TWJ;
+				DEVELOPMENT_TEAM = KUG8ZGU55Y;
 				INFOPLIST_FILE = "Find My Area/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Joe.Find-My-Area";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.UriasGames.Find-My-Area";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -383,14 +385,13 @@
 		};
 		B4482B98201167FD00E93394 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WZ37CA2TWJ;
+				DEVELOPMENT_TEAM = KUG8ZGU55Y;
 				INFOPLIST_FILE = "Find My Area/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Joe.Find-My-Area";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.UriasGames.Find-My-Area";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
