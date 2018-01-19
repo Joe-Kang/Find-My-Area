@@ -13,9 +13,12 @@
 		B4482B8D201167FD00E93394 /* Find_My_Area.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4482B8B201167FD00E93394 /* Find_My_Area.xcdatamodeld */; };
 		B4482B8F201167FD00E93394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4482B8E201167FD00E93394 /* Assets.xcassets */; };
 		B4482B92201167FD00E93394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4482B90201167FD00E93394 /* LaunchScreen.storyboard */; };
+		B4482BA820118CAF00E93394 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B4482BA720118CAF00E93394 /* Podfile */; };
+		C996E634805166EBC32ABCA6 /* libPods-Find My Area.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find My Area.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area.release.xcconfig"; sourceTree = "<group>"; };
 		B4482B81201167FD00E93394 /* Find My Area.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find My Area.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4482B84201167FD00E93394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4482B86201167FD00E93394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		B4482B8E201167FD00E93394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4482B91201167FD00E93394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4482B93201167FD00E93394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4482BA720118CAF00E93394 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find My Area.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area.debug.xcconfig"; sourceTree = "<group>"; };
+		F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Find My Area.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C996E634805166EBC32ABCA6 /* libPods-Find My Area.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C8CC535A693DB8BA9D565E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */,
+				00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B4482B78201167FD00E93394 = {
 			isa = PBXGroup;
 			children = (
+				B4482BA720118CAF00E93394 /* Podfile */,
 				B4482B83201167FD00E93394 /* Find My Area */,
 				B4482B82201167FD00E93394 /* Products */,
+				4C8CC535A693DB8BA9D565E7 /* Pods */,
+				E8D296224AFFB8D0694382A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +86,14 @@
 			path = "Find My Area";
 			sourceTree = "<group>";
 		};
+		E8D296224AFFB8D0694382A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4482B96201167FD00E93394 /* Build configuration list for PBXNativeTarget "Find My Area" */;
 			buildPhases = (
+				11A3D15937C20D8C9E7E5682 /* [CP] Check Pods Manifest.lock */,
 				B4482B7D201167FD00E93394 /* Sources */,
 				B4482B7E201167FD00E93394 /* Frameworks */,
 				B4482B7F201167FD00E93394 /* Resources */,
+				734B22BB2EFA5149191BB2AB /* [CP] Embed Pods Frameworks */,
+				60E29FE4774123DCB389F60B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,11 +158,68 @@
 			files = (
 				B4482B92201167FD00E93394 /* LaunchScreen.storyboard in Resources */,
 				B4482B8F201167FD00E93394 /* Assets.xcassets in Resources */,
+				B4482BA820118CAF00E93394 /* Podfile in Resources */,
 				B4482B8A201167FD00E93394 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11A3D15937C20D8C9E7E5682 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find My Area-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60E29FE4774123DCB389F60B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		734B22BB2EFA5149191BB2AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4482B7D201167FD00E93394 /* Sources */ = {
@@ -276,6 +363,7 @@
 		};
 		B4482B97201167FD00E93394 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +378,7 @@
 		};
 		B4482B98201167FD00E93394 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00F80504357A05935D2D88E8 /* Pods-Find My Area.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

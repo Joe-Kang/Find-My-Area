@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f9X-8b-2du">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6hA-mS-Bxu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,9 +42,6 @@
                                         <state key="normal" title="Create New Measurement">
                                             <color key="titleColor" red="0.2687873432873033" green="0.26829169399833752" blue="0.27782250328112379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="ecv-wo-q05" kind="show" id="J0X-rO-o5l"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o63-ia-F7I">
                                         <rect key="frame" x="0.0" y="145" width="335" height="145.5"/>
@@ -138,16 +135,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="sAn-1i-0aN">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7nj-0p-8nb"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NHH-bt-56c">
-                            <connections>
-                                <segue destination="Bqn-Ya-s6z" kind="showDetail" animates="NO" id="IAn-iP-ckf"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NHH-bt-56c"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vp-8A-3uA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2085.5999999999999" y="91.304347826086968"/>
+            <point key="canvasLocation" x="4927" y="90"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5Mq-ZK-nCY">
@@ -187,12 +180,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="6Yi-UR-EAt">
                         <barButtonItem key="leftBarButtonItem" title="Home" id="fyD-BE-XZg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rLw-EO-9jm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rLw-EO-9jm">
+                            <connections>
+                                <segue destination="ecv-wo-q05" kind="show" id="wLt-Sm-Ywx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohy-dp-Nn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3549.5999999999999" y="89.505247376311857"/>
+            <point key="canvasLocation" x="3281" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zrO-pc-lSV">
@@ -210,7 +207,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSc-qs-cCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407" y="91"/>
+            <point key="canvasLocation" x="4247" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kr6-3P-Njo">
@@ -228,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCH-KG-cgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2828" y="91"/>
+            <point key="canvasLocation" x="2378" y="110"/>
         </scene>
     </scenes>
     <resources>
