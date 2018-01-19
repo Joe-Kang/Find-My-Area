@@ -3,7 +3,8 @@ import GoogleMaps
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
-    
+    var pointsLocations = GMSMutablePath()
+    var currentLocation: CLLocation?
     let locationManager = CLLocationManager()
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -64,8 +65,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
-        let currentLocation = locations.last!
-        let camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 20.0)
+        currentLocation = locations.last!
+        let camera = GMSCameraPosition.camera(withLatitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!, zoom: 20.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
         mapView.delegate = self
@@ -73,7 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         // Creates a marker in the center of the map.
         
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+        marker.position = CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!)
         marker.title = "Current Location"
         marker.snippet = "Put pin here"
         marker.map = mapView
@@ -81,7 +82,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        marker.position = CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!)
+        pointsLocations.add((currentLocation?.coordinate)!)
+        print(GMSGeometryArea(pointsLocations))
         marker.map = mapView
     }
 }
