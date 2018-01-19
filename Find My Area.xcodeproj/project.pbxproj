@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		11C4DB9F9925071CFC5B6A00 /* Pods-Find My Area.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find My Area.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area.release.xcconfig"; sourceTree = "<group>"; };
 		5630C4D46A2324D429596E8F /* libPods-Find My Area.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Find My Area.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5121ADA201182F1009FAFF9 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A5121ADA201182F1009FAFF9 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B4482B81201167FD00E93394 /* Find My Area.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find My Area.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4482B84201167FD00E93394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4482B86201167FD00E93394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
