@@ -8,16 +8,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var currentLocation: CLLocation?
     let locationManager = CLLocationManager()
     
-    weak var delegate:MapViewControllerDelegate?
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    weak var delegate: MapViewControllerDelegate?
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        if pointsLocations.count() == 2{
-            let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
-            delegate?.returnDistance(by: self, distance )
-        }
-        else if pointsLocations.count() > 2{
-            delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
-        }
-        
+//        if pointsLocations.count() == 2{
+//            let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
+//            delegate?.returnDistance(by: self, distance)
+//
+//        }
+//        else if pointsLocations.count() > 2{
+//            delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
+//        }
+        print(GMSGeometryArea(pointsLocations))
+        delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
