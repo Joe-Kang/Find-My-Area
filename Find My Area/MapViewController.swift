@@ -22,10 +22,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    // You don't need to modify the default init(nibName:bundle:) method.
-    
+
     override func viewDidLoad() {
-    
         super.viewDidLoad()
         enableBasicLocationServices()
     }
@@ -78,29 +76,46 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         locationManager.startUpdatingLocation()
     }
     
+    
+    
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
         let camera = GMSCameraPosition.camera(withLatitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!, zoom: 20.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        
+        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!))
         mapView.delegate = self
         self.view = mapView
-        // Creates a marker in the center of the map.
-
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!)
+        marker.map = mapView
+        
         for location in clickedLocations {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
             marker.map = mapView
         }
+        let path = GMSMutablePath()
+        for location in clickedLocations {
+            path.add(CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!))
+        }
+//        if clickedLocations != nil {
+//            path.add(CLLocationCoordinate2D(latitude: (clickedLocations[0]?.coordinate.latitude)!, longitude: (clickedLocations[0]?.coordinate.longitude)!))
+//        }
+        let polygon = GMSPolygon(path: path)
+        polygon.fillColor = UIColor(red: 0.25, green: 0, blue: 0, alpha: 0.2)
+        polygon.strokeColor = .black
+        polygon.strokeWidth = 2
+        polygon.map = mapView
     }
-    
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!)
         pointsLocations.add((currentLocation?.coordinate)!)
         clickedLocations.append(currentLocation)
-        print(GMSGeometryArea(pointsLocations))
+        print("Area: ", GMSGeometryArea(pointsLocations))
         marker.map = mapView
+        mapView.animate(toLocation: marker.position)
+
     }
 }
