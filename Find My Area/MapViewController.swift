@@ -1,71 +1,12 @@
 import UIKit
 import GoogleMaps
-import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController {
     
-    let locationManager = CLLocationManager()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        enableBasicLocationServices()
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
-    
-    func enableBasicLocationServices() {
-        locationManager.delegate = self
-        
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            // Request when-in-use authorization initially
-            locationManager.requestWhenInUseAuthorization()
-            break
-            
-        case .restricted, .denied:
-            // Disable location features
-            disableMyLocationBasedFeatures()
-            break
-            
-        case .authorizedWhenInUse, .authorizedAlways:
-            // Enable location features
-            enableMyWhenInUseFeatures()
-            break
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager,
-                         didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .restricted, .denied:
-            disableMyLocationBasedFeatures()
-            break
-            
-        case .authorizedWhenInUse:
-            enableMyWhenInUseFeatures()
-            break
-            
-        case .notDetermined, .authorizedAlways:
-            break
-        }
-    }
-    
-    func disableMyLocationBasedFeatures(){
-        print("disableMyLocationBasedFeatures")
-    }
-    
-    func enableMyWhenInUseFeatures(){
-        print("enableMyWhenInUseFeaatures")
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.distanceFilter = 100.0  // In meters.
-        locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
-        let lastLocation = locations.last!
-        print(lastLocation)
-        
-        // Do something with the location.
-    }
+    // You don't need to modify the default init(nibName:bundle:) method.
     
     override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the
