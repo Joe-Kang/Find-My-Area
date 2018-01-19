@@ -55,7 +55,8 @@
                     <navigationItem key="navigationItem" id="Kkc-12-aBt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gv1-NC-c6B">
                             <connections>
-                                <segue destination="MuN-p3-MXe" kind="presentation" id="0j3-eA-6it"/>
+                                <action selector="addMapCoordinates:" destination="nzx-73-WVK" id="tui-dW-iCm"/>
+                                <segue destination="MuN-p3-MXe" kind="presentation" identifier="goToMapSegue" id="0j3-eA-6it"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -135,7 +136,11 @@
                                 <action selector="cancelButton:" destination="hUJ-YY-zfs" id="cyp-0I-Ymy"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OZa-Ny-Qne"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OZa-Ny-Qne">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="hUJ-YY-zfs" id="Tqd-wa-INx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fot-sm-uxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

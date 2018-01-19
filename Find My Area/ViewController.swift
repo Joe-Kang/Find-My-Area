@@ -9,7 +9,10 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MapViewControllerDelegate {
+    @IBAction func addMapCoordinates(_ sender: UIBarButtonItem) {
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,19 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
 
+    func returnArea(by Controller: UIViewController, _ area: Double) {
+        dismiss(animated: true, completion: nil)
+        print(area)
+
+    }
+    
+    func returnDistance(by Controller: UIViewController, _ distance: Double) {
+        dismiss(animated: true, completion: nil)
+        print(distance)
+
+    }
+    
+    
 
 }
 

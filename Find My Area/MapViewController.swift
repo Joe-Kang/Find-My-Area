@@ -9,6 +9,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     let locationManager = CLLocationManager()
     
     var delegate:MapViewControllerDelegate?
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        if pointsLocations.count() == 2{
+            let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
+            delegate?.returnDistance(by: self, distance )
+        }
+        else if pointsLocations.count() > 2{
+            delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
+        }
+    }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -65,7 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func enableMyWhenInUseFeatures(){
         print("enableMyWhenInUseFeatures")
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = 5.0  // In meters.
+        locationManager.distanceFilter = kCLDistanceFilterNone  // In meters.
         locationManager.startUpdatingLocation()
     }
     
