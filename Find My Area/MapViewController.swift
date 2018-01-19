@@ -2,7 +2,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     let locationManager = CLLocationManager()
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
@@ -58,22 +58,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func enableMyWhenInUseFeatures(){
         print("enableMyWhenInUseFeatures")
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.distanceFilter = 100.0  // In meters.
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 1  // In meters.
         locationManager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         let currentLocation = locations.last!
-        let camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 6.0)
+        let camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 20.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
+        
+        mapView.delegate = self
+        self.view = mapView
         // Creates a marker in the center of the map.
         
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
         marker.title = "Current Location"
         marker.snippet = "Put pin here"
+        marker.map = mapView
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
         marker.map = mapView
     }
 }
