@@ -2,13 +2,16 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UITextFieldDelegate {
     var pointsLocations = GMSMutablePath()
     var clickedLocations = [CLLocation?]()
     var currentLocation: CLLocation?
     let locationManager = CLLocationManager()
     
+    @IBOutlet weak var nameTextField: UITextField!
+    
     var delegate:MapViewControllerDelegate?
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if pointsLocations.count() == 2{
             let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
@@ -25,7 +28,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nameTextField.delegate = self
         enableBasicLocationServices()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nameTextField.resignFirstResponder()
+        return true
     }
 
     func enableBasicLocationServices() {
@@ -75,8 +84,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         locationManager.distanceFilter = kCLDistanceFilterNone  // In meters.
         locationManager.startUpdatingLocation()
     }
-    
-    
+
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
@@ -98,14 +106,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         for location in clickedLocations {
             path.add(CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!))
         }
-//        if clickedLocations != nil {
-//            path.add(CLLocationCoordinate2D(latitude: (clickedLocations[0]?.coordinate.latitude)!, longitude: (clickedLocations[0]?.coordinate.longitude)!))
-//        }
-        let polygon = GMSPolygon(path: path)
-        polygon.fillColor = UIColor(red: 0.25, green: 0, blue: 0, alpha: 0.2)
-        polygon.strokeColor = .black
-        polygon.strokeWidth = 2
-        polygon.map = mapView
+        if clickedLocations.count > 2 {
+            let polygon = GMSPolygon(path: path)
+            polygon.fillColor = UIColor(red: 0.25, green: 0, blue: 0, alpha: 0.2)
+            polygon.strokeColor = .black
+            polygon.strokeWidth = 2
+            polygon.map = mapView
+        } else if clickedLocations.count == 2 {
+            let line = GMSPolyline(path: path)
+            line.strokeColor = .black
+            line.strokeWidth = 2
+            line.map = mapView
+        }
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
