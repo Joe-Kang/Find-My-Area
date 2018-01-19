@@ -14,6 +14,7 @@
 		B4482B8F201167FD00E93394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4482B8E201167FD00E93394 /* Assets.xcassets */; };
 		B4482B92201167FD00E93394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4482B90201167FD00E93394 /* LaunchScreen.storyboard */; };
 		B4482BA820118CAF00E93394 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B4482BA720118CAF00E93394 /* Podfile */; };
+		B4482BAA20119F7A00E93394 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4482BA920119F7A00E93394 /* MapViewController.swift */; };
 		C996E634805166EBC32ABCA6 /* libPods-Find My Area.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		B4482B91201167FD00E93394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4482B93201167FD00E93394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4482BA720118CAF00E93394 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		B4482BA920119F7A00E93394 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E9A635A6B4283F75E07F0769 /* Pods-Find My Area.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find My Area.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find My Area/Pods-Find My Area.debug.xcconfig"; sourceTree = "<group>"; };
 		F7E9300781B6FC465E731CD4 /* libPods-Find My Area.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Find My Area.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				B4482B84201167FD00E93394 /* AppDelegate.swift */,
 				B4482B86201167FD00E93394 /* ViewController.swift */,
 				B4482B88201167FD00E93394 /* Main.storyboard */,
+				B4482BA920119F7A00E93394 /* MapViewController.swift */,
 				B4482B8E201167FD00E93394 /* Assets.xcassets */,
 				B4482B90201167FD00E93394 /* LaunchScreen.storyboard */,
 				B4482B93201167FD00E93394 /* Info.plist */,
@@ -229,6 +232,7 @@
 				B4482B87201167FD00E93394 /* ViewController.swift in Sources */,
 				B4482B85201167FD00E93394 /* AppDelegate.swift in Sources */,
 				B4482B8D201167FD00E93394 /* Find_My_Area.xcdatamodeld in Sources */,
+				B4482BAA20119F7A00E93394 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
