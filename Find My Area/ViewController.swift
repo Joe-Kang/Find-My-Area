@@ -19,6 +19,7 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchAllItems()
         
     }
     
@@ -27,12 +28,11 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
     
     var distanceItems = ["living room", "garden", "fences"]
     var areaItems = ["living room", "garden", "fences"]
+    var area:[AreaListItem] = []
+    var distance:[DistanceListItem] = []
+  
     
-    //    FOR DATABASE
-    //    var areas = [AreaItem]()
-    //    var distances = [DistanceItem]()
-    
-    //    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -54,14 +54,16 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
         var cell = UITableViewCell()
         
         if tableView == self.distanceTableView {
-            print("Hello2")
             cell = tableView.dequeueReusableCell(withIdentifier: "distanceCell", for: indexPath)
-            cell.textLabel?.text = distanceItems[indexPath.row]
+            cell.textLabel?.text = distance[indexPath.row].nameOfPath
+           let dist = String(format:"%2f", "\(distance[indexPath.row])", "Square Meters")
+            cell.detailTextLabel?.text = dist
         }
         if tableView == self.areaTableView {
-            print("Hello3")
             cell = tableView.dequeueReusableCell(withIdentifier: "areaCell", for: indexPath)
-            cell.textLabel?.text = areaItems[indexPath.row]
+            cell.textLabel?.text = area[indexPath.row].nameOfArea
+            let areaM = String(format:"%2f", "\(area[indexPath.row])", "Square Meters")
+            cell.detailTextLabel?.text = areaM
         }
         return cell
     }
@@ -74,37 +76,51 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
         mapViewController.delegate = self
     }
     
-    func returnArea(by Controller: MapViewController, _ area: Double) {
+    func returnArea(by Controller: MapViewController, _ area: Double, _ name:String) {
         dismiss(animated: true, completion: nil)
-        print(area)
-        
+        let thing = NSEntityDescription.insertNewObject(forEntityName: "AreaListItem", into: managedObjectContext) as! AreaListItem
+        thing.area = area
+        thing.nameOfArea = name
+        do{
+            try managedObjectContext.save()
+        } catch{
+            print("\(error)")
+        }
+        areaTableView.reloadData()
     }
     
-    func returnDistance(by Controller: MapViewController, _ distance: Double) {
+    func returnDistance(by Controller: MapViewController, _ distance: Double, _ name:String) {
         dismiss(animated: true, completion: nil)
-        print(distance)
+        let thing = NSEntityDescription.insertNewObject(forEntityName: "DistanceListItem", into: managedObjectContext) as! DistanceListItem
+        thing.distance = distance
+        thing.nameOfPath = name
+        do{
+            try managedObjectContext.save()
+        } catch{
+            print("\(error)")
+        }
+        distanceTableView.reloadData()
     }
     
     
-    //    FOR DATABASE
-    //    func fetchAllItems(){
-    //        let areaRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AreaItem")
-    //        do {
-    //            let areaResult = try managedObjectContext.fetch(areaRequest)
-    //            let areaitems = areaResult as! [AreaItem]
-    //        } catch {
-    //            print("\(error)")
-    //        }
-    //
-    //        let distanceRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DistanceItem")
-    //        do {
-    //            let distanceResult = try managedObjectContext.fetch(distanceRequest)
-    //            let distanceitems = distanceResult as! [DistanceItem]
-    //        } catch {
-    //            print("\(error)")
-    //        }
-    //
-    //    }
+        func fetchAllItems(){
+            let areaRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AreaItem")
+            do {
+                let areaResult = try managedObjectContext.fetch(areaRequest)
+                 area = areaResult as! [AreaListItem]
+            } catch {
+                print("\(error)")
+            }
+    
+            let distanceRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DistanceItem")
+            do {
+                let distanceResult = try managedObjectContext.fetch(distanceRequest)
+                distance = distanceResult as! [DistanceListItem]
+            } catch {
+                print("\(error)")
+            }
+    
+        }
     
     
 }

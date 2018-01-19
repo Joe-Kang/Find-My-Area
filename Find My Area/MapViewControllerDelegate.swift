@@ -9,6 +9,6 @@
 import UIKit
 
 protocol MapViewControllerDelegate: class {
-    func returnArea(by Controller: MapViewController,_ area:Double)
-    func returnDistance(by Controller: MapViewController, _ distance:Double)
+    func returnArea(by Controller: MapViewController,_ area:Double, _ name:String)
+    func returnDistance(by Controller: MapViewController, _ distance:Double, _ name:String)
 }
