@@ -67,15 +67,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
-        print(lastLocation)
+        print("Location: \(lastLocation)")
         
         // Do something with the location.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
 
 
 }
