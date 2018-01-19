@@ -11,11 +11,13 @@ import CoreLocation
 
 class ViewController: UIViewController, MapViewControllerDelegate {
     @IBAction func addMapCoordinates(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToMapSegue", sender: self)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}

@@ -8,7 +8,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var currentLocation: CLLocation?
     let locationManager = CLLocationManager()
     
-    var delegate:MapViewControllerDelegate?
+    weak var delegate:MapViewControllerDelegate?
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if pointsLocations.count() == 2{
             let distance = GMSGeometryDistance(pointsLocations.coordinate(at: 0), pointsLocations.coordinate(at: 1))
@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         else if pointsLocations.count() > 2{
             delegate?.returnDistance(by: self, GMSGeometryArea(pointsLocations))
         }
+        
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
@@ -26,6 +27,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         enableBasicLocationServices()
+        
     }
 
     func enableBasicLocationServices() {
