@@ -7,6 +7,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var clickedLocations = [CLLocation?]()
     var currentLocation: CLLocation?
     let locationManager = CLLocationManager()
+    
+    var delegate:MapViewControllerDelegate?
+    
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
@@ -60,7 +63,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func enableMyWhenInUseFeatures(){
         print("enableMyWhenInUseFeatures")
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = kCLDistanceFilterNone  // In meters.
+        locationManager.distanceFilter = 5.0  // In meters.
         locationManager.startUpdatingLocation()
     }
     
