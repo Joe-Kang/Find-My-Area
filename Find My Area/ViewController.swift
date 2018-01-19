@@ -26,8 +26,6 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
     @IBOutlet weak var distanceTableView: UITableView!
     @IBOutlet weak var areaTableView: UITableView!
     
-    var distanceItems = ["living room", "garden", "fences"]
-    var areaItems = ["living room", "garden", "fences"]
     var area:[AreaListItem] = []
     var distance:[DistanceListItem] = []
   
@@ -39,11 +37,10 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
         var count = 0
         
         if tableView == self.distanceTableView {
-            count = distanceItems.count
-            print("DISTANCE ITEMS\(distanceItems.count)")
+            count = distance.count
         }
         if tableView == self.areaTableView {
-            count = areaItems.count
+            count = area.count
         }
         
         return count
@@ -104,7 +101,7 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
     
     
         func fetchAllItems(){
-            let areaRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AreaItem")
+            let areaRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AreaListItem")
             do {
                 let areaResult = try managedObjectContext.fetch(areaRequest)
                  area = areaResult as! [AreaListItem]
@@ -112,7 +109,7 @@ class ViewController: UIViewController, MapViewControllerDelegate, UITableViewDe
                 print("\(error)")
             }
     
-            let distanceRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DistanceItem")
+            let distanceRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DistanceListItem")
             do {
                 let distanceResult = try managedObjectContext.fetch(distanceRequest)
                 distance = distanceResult as! [DistanceListItem]
